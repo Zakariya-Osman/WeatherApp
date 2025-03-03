@@ -7,6 +7,11 @@
 
 ---
 
+## 📌 Weather Forecast App Overview  
+The **Weather Forecast App** displays the **current temperature, weather conditions, and forecast** for a specific location. The app will also include a **feature that allows users to switch between different locations** to view weather updates from multiple places.
+
+---
+
 ## 1️⃣ Development Framework
 **Decision:** React Native ✅  
 **Date:** [Insert Date]  
