@@ -8,7 +8,7 @@
 ---
 
 ## 1️⃣ Development Framework
-**Decision:** [Chosen framework – e.g., React Native]  
+**Decision:** React Native ✅  
 **Date:** [Insert Date]  
 **Status:** Approved  
 
@@ -38,16 +38,17 @@ The app must be developed for **Android** and should provide a responsive and in
 
 ---
 
-## 2️⃣ Navigation Strategy
-**Decision:** [Chosen strategy – e.g., Bottom Tab Navigation]  
+## 2️⃣ Navigation Strategy  
+**Decision:** Modeled after the **Google Pixel Weather App** ✅  
 **Date:** [Insert Date]  
 **Status:** Approved  
 
-### Context & Problem Statement
-Users need an intuitive way to navigate the **Weather Forecast App**. The navigation should:  
-- Be **user-friendly** and require minimal taps  
-- Fit within an **Android mobile experience**  
-- Allow easy switching between **locations & weather views**  
+### Context & Problem Statement  
+Users need an intuitive way to navigate the **Weather Forecast App**. We want to **model our navigation** after the **Google Pixel Weather App**, which offers:  
+- A **clean and minimalistic UI**  
+- **Swipe gestures & smooth transitions**  
+- **Easy access to hourly & daily forecasts**  
+- **Quick location switching**  
 
 ### Options Considered  
 | Navigation Type         | Pros                                   | Cons                         |
@@ -57,42 +58,43 @@ Users need an intuitive way to navigate the **Weather Forecast App**. The naviga
 | Stack Navigation      | Easy to implement                     | Less efficient for multi-screen apps |
 
 ### Decision Outcome  
-**We chose:** **Bottom Tab Navigation** ✅  
+**We chose:** **A swipe-based navigation system inspired by the Google Pixel Weather App** ✅  
 
 #### Reasoning:  
-- **Best for mobile apps** with **limited screens**  
-- Users can easily **switch between locations & settings**  
-- **Standard design pattern** in Android apps  
+- **More intuitive than bottom tab navigation** for a weather app  
+- Allows users to **swipe between hourly, daily, and location-based forecasts**  
+- **Minimalist and clean UI**, optimized for Android  
 
 ---
 
 ## 3️⃣ Hardware Features  
-**Decision:** No additional hardware features ✅  
+**Decision:** **Use Phone’s GPS for Location Detection** ✅  
 **Date:** [Insert Date]  
 **Status:** Approved  
 
 ### Context & Problem Statement  
-The Weather Forecast App does not require additional hardware features. Users can manually enter locations, and weather data will be retrieved via an API. Features like GPS, speaker, or fingerprint scanner are **not necessary** for the core functionality.  
+The **Weather Forecast App** will utilize **GPS hardware** to improve user experience by automatically fetching weather updates based on the user’s real-time location.  
 
 ### Options Considered  
-| Feature       | Pros                         | Cons                         |
-|--------------|-----------------------------|------------------------------|
-| GPS          | Auto-detects user location   | Requires permissions, not necessary |
-| Speaker      | Could provide voice alerts  | Not essential for app function |
+| Feature       | Pros                                  | Cons                         |
+|--------------|--------------------------------------|------------------------------|
+| GPS          | Auto-detects user location for real-time weather updates | Requires user permission |
+| Manual Location Entry | No need for permissions | Less convenient for users |
+| Speaker      | Could provide voice alerts          | Not necessary for MVP        |
 | Fingerprint Scanner | Could be used for personalization | Not relevant for a weather app |
 
 ### Decision Outcome  
-**We chose:** **No hardware features** ✅  
+**We chose:** **Phone’s GPS for real-time location updates** ✅  
 
 #### Reasoning:  
-- The app **does not require location auto-detection**; users can manually enter their location  
-- **No need for sound-based alerts**  
-- **No user authentication required**, so fingerprint scanning is unnecessary  
+- **Enhances user convenience** by fetching real-time weather data for their exact location  
+- **Removes the need for manual location entry**  
+- **Standard feature in most weather apps**, making the experience seamless  
 
 ---
 
 ## 4️⃣ Data Storage
-**Decision:** [Chosen storage – e.g., Remote Database]  
+**Decision:** Remote Storage (Weather API + Firebase for user settings) ✅  
 **Date:** [Insert Date]  
 **Status:** Approved  
 
@@ -123,12 +125,3 @@ The app must store **weather data and user preferences** efficiently. The decisi
 ✔ **Attribution List (.docx or .pdf)**  
 ✔ **Progress Report (.docx or .pdf)**  
 ✔ **Names of all team members included**  
-
----
-
-### 🔹 Summary of Updates:
-- **Removed hardware features** (GPS, speaker, fingerprint scanner)  
-- Justified why **manual location entry** is preferred over GPS  
-- Ensured clarity in the **decision-making process**  
-
-This is ready for **GitHub & Word submission**! Let me know if you need any changes. 🚀
