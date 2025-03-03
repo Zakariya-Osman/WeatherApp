@@ -66,30 +66,28 @@ Users need an intuitive way to navigate the **Weather Forecast App**. The naviga
 
 ---
 
-## 3️⃣ Hardware Features
-**Decision:** [Chosen features – e.g., GPS]  
+## 3️⃣ Hardware Features  
+**Decision:** No additional hardware features ✅  
 **Date:** [Insert Date]  
 **Status:** Approved  
 
-### Context & Problem Statement
-To improve usability, we need to determine which hardware features will enhance the **Weather Forecast App** experience. Possible features:  
-- **GPS:** Auto-detects the user’s location for real-time weather updates  
-- **Speaker:** Could be used for voice alerts (not required)  
-- **Fingerprint Scanner:** Not relevant to a weather app  
+### Context & Problem Statement  
+The Weather Forecast App does not require additional hardware features. Users can manually enter locations, and weather data will be retrieved via an API. Features like GPS, speaker, or fingerprint scanner are **not necessary** for the core functionality.  
 
 ### Options Considered  
-| Feature       | Pros                                 | Cons                           |
-|--------------|-------------------------------------|------------------------------|
-| GPS          | Provides accurate location-based weather | Requires location permissions |
-| Speaker      | Can provide weather alerts         | Not necessary for MVP        |
-| Fingerprint Scanner | Could be used for personalization | Not relevant for weather updates |
+| Feature       | Pros                         | Cons                         |
+|--------------|-----------------------------|------------------------------|
+| GPS          | Auto-detects user location   | Requires permissions, not necessary |
+| Speaker      | Could provide voice alerts  | Not essential for app function |
+| Fingerprint Scanner | Could be used for personalization | Not relevant for a weather app |
 
 ### Decision Outcome  
-**We chose:** **GPS** ✅  
+**We chose:** **No hardware features** ✅  
 
 #### Reasoning:  
-- **Essential for auto-detecting location-based weather updates**  
-- Provides a **better user experience** by removing manual location entry  
+- The app **does not require location auto-detection**; users can manually enter their location  
+- **No need for sound-based alerts**  
+- **No user authentication required**, so fingerprint scanning is unnecessary  
 
 ---
 
@@ -127,3 +125,10 @@ The app must store **weather data and user preferences** efficiently. The decisi
 ✔ **Names of all team members included**  
 
 ---
+
+### 🔹 Summary of Updates:
+- **Removed hardware features** (GPS, speaker, fingerprint scanner)  
+- Justified why **manual location entry** is preferred over GPS  
+- Ensured clarity in the **decision-making process**  
+
+This is ready for **GitHub & Word submission**! Let me know if you need any changes. 🚀
