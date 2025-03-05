@@ -1,9 +1,9 @@
 # Architecture Decision Records – Weather Forecast App
 
 ## Team Information
-**Team Name:** [Your Team Name]  
-**Date:** [Insert Date]  
-**Team Members:** [List All Team Members]  
+**Team Name:** The Team 
+**Date:** 2025-03-04
+**Team Members:**  Zackaria, Vaibhav, Rogerio and Zumar
 
 ---
 
@@ -13,9 +13,7 @@ The **Weather Forecast App** displays the **current temperature, weather conditi
 ---
 
 ## 1️⃣ Development Framework
-**Decision:** React Native ✅  
-**Date:** [Insert Date]  
-**Status:** Approved  
+**Decision:** React Native ✅   
 
 ### Context & Problem Statement
 The app must be developed for **Android** and should provide a responsive and interactive user experience. We need to decide on a development framework that:  
@@ -45,8 +43,6 @@ The app must be developed for **Android** and should provide a responsive and in
 
 ## 2️⃣ Navigation Strategy  
 **Decision:** Modeled after the **Google Pixel Weather App** ✅  
-**Date:** [Insert Date]  
-**Status:** Approved  
 
 ### Context & Problem Statement  
 Users need an intuitive way to navigate the **Weather Forecast App**. We want to **model our navigation** after the **Google Pixel Weather App**, which offers:  
@@ -73,9 +69,7 @@ Users need an intuitive way to navigate the **Weather Forecast App**. We want to
 ---
 
 ## 3️⃣ Hardware Features  
-**Decision:** **Use Phone’s GPS for Location Detection** ✅  
-**Date:** [Insert Date]  
-**Status:** Approved  
+**Decision:** **Use Phone’s GPS for Location Detection** ✅   
 
 ### Context & Problem Statement  
 The **Weather Forecast App** will utilize **GPS hardware** to improve user experience by automatically fetching weather updates based on the user’s real-time location.  
@@ -100,8 +94,6 @@ The **Weather Forecast App** will utilize **GPS hardware** to improve user exper
 
 ## 4️⃣ Data Storage
 **Decision:** Remote Storage (Weather API + Firebase for user settings) ✅  
-**Date:** [Insert Date]  
-**Status:** Approved  
 
 ### Context & Problem Statement
 The app must store **weather data and user preferences** efficiently. The decision should consider:  
@@ -122,11 +114,3 @@ The app must store **weather data and user preferences** efficiently. The decisi
 #### Reasoning:  
 - **Weather data should always be current**, so using an **API** makes sense  
 - **User preferences** (saved locations, units) will be stored using **Firebase**  
-
----
-
-## 📍 Submission Checklist  
-✔ **Architecture Decision Records (Word document & GitHub)**  
-✔ **Attribution List (.docx or .pdf)**  
-✔ **Progress Report (.docx or .pdf)**  
-✔ **Names of all team members included**  
