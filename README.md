@@ -1,8 +1,11 @@
 # Architecture Decision Records – Weather Forecast App
 
 ## Team Information
+
 **Team Name:** The Team 
+
 **Date:** 2025-03-04
+
 **Team Members:**  Zackaria, Vaibhav, Rogerio and Zumar
 
 ---
