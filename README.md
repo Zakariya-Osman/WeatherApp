@@ -1,119 +1,113 @@
 # Architecture Decision Records – Weather Forecast App
 
 ## Team Information
-
-**Team Name:** The Team 
-
-**Date:** 2025-03-04
-
-**Team Members:**  Zackaria, Vaibhav, Rogerio and Zumar
+- **Team Name:** The Team
+- **Date:** 2025-03-04
+- **Team Members:** Zackaria, Vaibhav, Rogerio, Zumar
 
 ---
 
-## 📌 Weather Forecast App Overview  
-The **Weather Forecast App** displays the **current temperature, weather conditions, and forecast** for a specific location. The app will also include a **feature that allows users to switch between different locations** to view weather updates from multiple places.
+## Weather Forecast App Overview
+The Weather Forecast App will display current weather conditions, temperature, and forecasts for a selected location. Users can switch between locations to view weather updates from different places.
 
 ---
 
-## 1️⃣ Development Framework
-**Decision:** React Native ✅   
+## 1. Development Framework
+**Decision:** React Native
 
-### Context & Problem Statement
-The app must be developed for **Android** and should provide a responsive and interactive user experience. We need to decide on a development framework that:  
-- Supports **Android deployment**  
-- Aligns with our **team’s skill set**  
-- Provides **good performance and ease of development**  
+### Context
+The app is being built for Android and needs to be responsive and easy to develop. We want a framework that:
+- Works well for Android apps
+- Matches our team’s skills
+- Balances performance and development speed
 
-### Options Considered  
-| Framework     | Pros                                        | Cons                            |
-|--------------|---------------------------------------------|--------------------------------|
-| React Native | Fast development, strong community, reusable components | Slightly larger app size |
-| Ionic        | Cross-platform, web-based                  | Less native performance        |
-| Cordova      | Simple, works with web technologies        | Slower performance, lacks native feel |
-| Framework7   | Great for hybrid apps                      | Less support & documentation   |
-| NativeScript | Direct access to native APIs               | Steeper learning curve         |
+### Options Considered
+| Framework     | Pros                                  | Cons                           |
+|--------------|--------------------------------------|-------------------------------|
+| React Native | Fast development, large community, reusable components | Slightly larger app size |
+| Ionic        | Cross-platform, web-based           | Weaker native performance     |
+| Cordova      | Simple, works with web tech         | Slower, lacks native feel     |
+| Framework7   | Good for hybrid apps                | Less community support        |
+| NativeScript | Direct access to native APIs        | Harder to learn               |
 
-### Decision Outcome  
-**We chose:** **React Native** ✅  
-
-#### Reasoning:  
-- Strong **community support** & active maintenance  
-- Efficient for **Android app development**  
-- Works well with **Bootstrap for styling**  
-- Offers **better performance** than other hybrid solutions  
+### Final Decision
+React Native was chosen because:
+- It has strong community support and active maintenance
+- It is efficient for Android development
+- It offers better performance than other hybrid solutions
 
 ---
 
-## 2️⃣ Navigation Strategy  
-**Decision:** Modeled after the **Google Pixel Weather App** ✅  
+## 2. Navigation Strategy
+**Decision:** Swipe-based navigation (inspired by Google Pixel Weather App)
 
-### Context & Problem Statement  
-Users need an intuitive way to navigate the **Weather Forecast App**. We want to **model our navigation** after the **Google Pixel Weather App**, which offers:  
-- A **clean and minimalistic UI**  
-- **Swipe gestures & smooth transitions**  
-- **Easy access to hourly & daily forecasts**  
-- **Quick location switching**  
+### Context
+The app should be simple and intuitive to navigate. The Google Pixel Weather App provides a clean experience with:
+- Minimal UI
+- Swipe gestures for different forecast views
+- Quick access to multiple locations
 
-### Options Considered  
-| Navigation Type         | Pros                                   | Cons                         |
-|------------------------|---------------------------------------|------------------------------|
-| Bottom Tab Navigation | Simple, familiar to Android users     | Limited space for many screens |
-| Side Drawer Navigation | Good for many sections               | Less intuitive for quick switching |
-| Stack Navigation      | Easy to implement                     | Less efficient for multi-screen apps |
+### Options Considered
+| Navigation Type         | Pros                              | Cons                           |
+|------------------------|--------------------------------|------------------------------|
+| Swipe Navigation       | Fast, smooth transitions       | May need gesture fine-tuning |
+| Bottom Tabs           | Familiar to Android users      | Limited space for screens    |
+| Side Drawer          | Works for apps with many pages | Less intuitive for weather   |
+| Stack Navigation     | Easy to set up                 | Not ideal for quick switching |
 
-### Decision Outcome  
-**We chose:** **A swipe-based navigation system inspired by the Google Pixel Weather App** ✅  
-
-#### Reasoning:  
-- **More intuitive than bottom tab navigation** for a weather app  
-- Allows users to **swipe between hourly, daily, and location-based forecasts**  
-- **Minimalist and clean UI**, optimized for Android  
+### Final Decision
+Swipe-based navigation is the best fit because:
+- It allows quick access to different forecasts and locations
+- It keeps the UI clean and uncluttered
+- It is more efficient than bottom tabs for this use case
 
 ---
 
-## 3️⃣ Hardware Features  
-**Decision:** **Use Phone’s GPS for Location Detection** ✅   
+## 3. Hardware Features
+**Decision:** Use phone’s GPS for location detection
 
-### Context & Problem Statement  
-The **Weather Forecast App** will utilize **GPS hardware** to improve user experience by automatically fetching weather updates based on the user’s real-time location.  
+### Context
+Users should get weather updates based on their real-time location. GPS allows us to fetch location-specific forecasts automatically.
 
-### Options Considered  
-| Feature       | Pros                                  | Cons                         |
-|--------------|--------------------------------------|------------------------------|
-| GPS          | Auto-detects user location for real-time weather updates | Requires user permission |
-| Manual Location Entry | No need for permissions | Less convenient for users |
-| Speaker      | Could provide voice alerts          | Not necessary for MVP        |
-| Fingerprint Scanner | Could be used for personalization | Not relevant for a weather app |
+### Options Considered
+| Feature       | Pros                                   | Cons                     |
+|--------------|--------------------------------------|-------------------------|
+| GPS          | Auto-fetches local weather         | Requires user permission |
+| Manual Entry | No permission needed               | Less convenient         |
+| Speaker      | Could provide voice alerts         | Not a priority feature  |
+| Fingerprint  | Possible for personalization       | Not relevant here       |
 
-### Decision Outcome  
-**We chose:** **Phone’s GPS for real-time location updates** ✅  
-
-#### Reasoning:  
-- **Enhances user convenience** by fetching real-time weather data for their exact location  
-- **Removes the need for manual location entry**  
-- **Standard feature in most weather apps**, making the experience seamless  
+### Final Decision
+GPS was chosen because:
+- It removes the need for users to manually enter locations
+- It provides real-time weather updates
+- It is a standard feature in most weather apps
 
 ---
 
-## 4️⃣ Data Storage
-**Decision:** Remote Storage (Weather API + Firebase for user settings) ✅  
+## 4. Data Storage
+**Decision:** Weather API for live data + Firebase for user settings
 
-### Context & Problem Statement
-The app must store **weather data and user preferences** efficiently. The decision should consider:  
-- **Speed & performance**  
-- **Data persistence** (should weather data be stored or fetched in real-time?)  
-- **Security concerns**  
+### Context
+We need to store weather data and user preferences efficiently. Weather data should always be up to date, while user preferences (saved locations, units) should be stored securely.
 
-### Options Considered  
+### Options Considered
 | Storage Type            | Pros                          | Cons                        |
 |-------------------------|------------------------------|-----------------------------|
-| Local Storage (Encrypted)  | Faster access, works offline  | Takes up device space      |
-| Local Storage (Unencrypted) | Simpler implementation      | Security risk              |
-| Remote Storage          | Always up-to-date data       | Requires internet connection |
+| Local (Encrypted)       | Works offline, secure        | Uses device storage         |
+| Local (Unencrypted)     | Simple, fast                 | Security risk               |
+| Remote (API + Firebase) | Always up-to-date data       | Needs internet connection  |
 
-### Decision Outcome  
-**We chose:** **Remote Storage (Weather API + Firebase for settings)** ✅  
+### Final Decision
+- Weather data will be fetched via an API to ensure it is always current
+- User settings (saved locations, units) will be stored in Firebase
 
-#### Reasoning:  
-- **Weather data should always be current**, so using an **API** makes sense  
-- **User preferences** (saved locations, units) will be stored using **Firebase**  
+---
+
+## Summary of Key Decisions
+- **React Native** for development
+- **Swipe-based navigation** for a smooth experience
+- **GPS for real-time location updates**
+- **Weather API + Firebase** for data storage
+
+This setup balances performance, usability, and maintainability while keeping the app lightweight and intuitive.
