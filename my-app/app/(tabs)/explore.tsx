@@ -71,7 +71,7 @@ export default function WeatherApp() {
             value={newTime}
             onChangeText={setNewTime}
           />
-          <TouchableOpacity style={s.addButton} onPress={addCity}>
+          <TouchableOpacity style={s.addButton}>
             <Text style={s.addButtonText}>Add</Text>
           </TouchableOpacity>
         </View>
